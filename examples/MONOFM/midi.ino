@@ -123,7 +123,7 @@ void initMidi(unsigned char _channel){
   MIDI.setHandleContinue(HandleContinue);
   MIDI.setHandleStop(HandleStop);
 
-  MIDI.turnThruOn(Full);
+  MIDI.turnThruOn(midi::Full);
   // MIDI.turnThruOff(); 
 }
 
@@ -150,7 +150,7 @@ void indicateMidiChannel(unsigned char _channel){
 
 
 
-void HandleSystemExclusive(byte *array, byte size){
+void HandleSystemExclusive(byte *array, unsigned int size){
 
   if(array[1]==BASTL_BYTE){ 
 

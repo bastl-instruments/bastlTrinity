@@ -1,6 +1,8 @@
 
 #include <trinityHW.h>
 #include <MIDI.h>
+MIDI_CREATE_DEFAULT_INSTANCE();
+
 #include <EEPROM.h>
 #include <sequencer.h>
 #include <MozziGuts.h>

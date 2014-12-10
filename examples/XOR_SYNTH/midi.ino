@@ -389,7 +389,7 @@ void indicateMidiChannel(unsigned char _channel){
 #define NUMBER_OF_MESSAGE_BYTES 2
 
 //unsigned char sysExArray[NUMBER_OF_SYSEX_BYTES];
-void HandleSystemExclusive(byte *array, byte size){
+void HandleSystemExclusive(byte *array, unsigned int size){
 
   if(array[1]==BASTL_BYTE){ 
 

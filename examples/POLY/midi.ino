@@ -279,7 +279,7 @@ void initMidi(unsigned char _channel){
   MIDI.setHandleContinue(HandleContinue);
   MIDI.setHandleStop(HandleStop);
 
-  //MIDI.turnThruOn(Full);
+  MIDI.turnThruOn(midi::Full);
   // MIDI.turnThruOff();  
 }
 

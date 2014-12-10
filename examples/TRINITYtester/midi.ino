@@ -31,7 +31,7 @@ void HandleControlChange(byte channel, byte number, byte value){
 
 }
 
-void HandleSystemExclusive(byte *array, byte size){
+void HandleSystemExclusive(byte *array, unsigned int size){
   testing=true;
 }
 

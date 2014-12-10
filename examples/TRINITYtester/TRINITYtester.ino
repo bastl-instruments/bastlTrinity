@@ -4,6 +4,8 @@
  */
 
 #include <MIDI.h>
+MIDI_CREATE_DEFAULT_INSTANCE();
+
 #include <trinityHW.h>
 #include <MozziGuts.h>
 #include <mozzi_midi.h>
@@ -92,10 +94,10 @@ void UI(){
       if(hw.justPressed(i))   MIDI.sendNoteOn(59+i*2,127,1);
       if(hw.justReleased(i))  MIDI.sendNoteOff(59+i*2,0,1);
     }
-    if(hw.justPressed(SMALL_BUTTON_1)) MIDI.sendRealTime(Start);
-    if(hw.justReleased(SMALL_BUTTON_1)) MIDI.sendRealTime(Stop);
+    if(hw.justPressed(SMALL_BUTTON_1)) MIDI.sendRealTime(midi::Start);
+    if(hw.justReleased(SMALL_BUTTON_1)) MIDI.sendRealTime(midi::Stop);
     if((counter%3)==0){
-      if(hw.buttonState(SMALL_BUTTON_1)) MIDI.sendRealTime(Clock);
+      if(hw.buttonState(SMALL_BUTTON_1)) MIDI.sendRealTime(midi::Clock);
     }
     counter++;
     if(counter>32) counter=0,page=increaseValue(page,7),sendSysExArray();

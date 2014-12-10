@@ -14,7 +14,7 @@ void renderSequencer(){
 }
 
 void sendClock(){
-  MIDI.sendRealTime(Clock);
+  MIDI.sendRealTime(midi::Clock);
 }
 
 

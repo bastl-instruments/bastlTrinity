@@ -260,8 +260,8 @@ void renderCombo(){
   // page > erease = play/stop
   if(hw.buttonState(PAGE) && hw.justPressed(EREASE)){
     seq.playStop(), combo=true; 
-    if(seq.isPlaying() && !slave) MIDI.sendRealTime(Start);
-    else if(!slave) MIDI.sendRealTime(Stop),record=false;//,global=false;//, sendAllNoteOff();
+    if(seq.isPlaying() && !slave) MIDI.sendRealTime(midi::Start);
+    else if(!slave) MIDI.sendRealTime(midi::Stop),record=false;//,global=false;//, sendAllNoteOff();
     hw.freezeAllKnobs();
   }
 

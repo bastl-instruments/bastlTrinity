@@ -54,7 +54,7 @@ void renderArp(){
 }
 //#define CLOCK 8
 void sendClock(){
-  MIDI.sendRealTime(Clock);
+  MIDI.sendRealTime(midi::Clock);
 }
 
 //for(int i=0;i<NUMBER_OF_VOICES;i++) if(!ADSR[i].active()) voiceUse[i]=255;

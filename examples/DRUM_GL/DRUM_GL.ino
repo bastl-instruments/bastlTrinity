@@ -1,5 +1,7 @@
 // libraries
 #include <MIDI.h>
+MIDI_CREATE_DEFAULT_INSTANCE();
+
 #include <EEPROM.h>
 #include <avr/pgmspace.h>
 #include <trinityHW.h>

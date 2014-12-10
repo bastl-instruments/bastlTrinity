@@ -1,5 +1,7 @@
 // libraries
 #include <MIDI.h>
+MIDI_CREATE_DEFAULT_INSTANCE();
+
 #include <midi_Defs.h>
 #include <EEPROM.h>
 #include <avr/pgmspace.h>

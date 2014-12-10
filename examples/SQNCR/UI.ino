@@ -328,8 +328,8 @@ void renderCombo(){
 
   if(hw.buttonState(SMALL_BUTTON_2) && hw.justPressed(EXTRA_BUTTON_2)){
     seq.playStop(), combo=true; 
-    if(seq.isPlaying() && !slave) MIDI.sendRealTime(Start);
-    else if(!slave) MIDI.sendRealTime(Stop), sendAllNoteOff();
+    if(seq.isPlaying() && !slave) MIDI.sendRealTime(midi::Start);
+    else if(!slave) MIDI.sendRealTime(midi::Stop), sendAllNoteOff();
   }
 
   if(hw.buttonState(EXTRA_BUTTON_2) && hw.justPressed(SMALL_BUTTON_2))  record=!record, combo=true; // seq.start();
@@ -513,7 +513,7 @@ void writeToStep(unsigned char _instrument,unsigned char _pattern, unsigned char
 
 
 void sendClock(){
-  MIDI.sendRealTime(Clock);
+  MIDI.sendRealTime(midi::Clock);
 }
 
 

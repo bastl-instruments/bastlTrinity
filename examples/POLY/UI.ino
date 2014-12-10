@@ -419,7 +419,7 @@ void sendSysExArray(){
 
 
 
-void HandleSystemExclusive(byte *array, byte size){
+void HandleSystemExclusive(byte *array, unsigned int size){
 
   if(array[1]==BASTL_BYTE){ 
 

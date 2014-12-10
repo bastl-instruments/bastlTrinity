@@ -90,7 +90,7 @@ void HandlePitchBend(byte channel, int bend){
 
 
 
-void HandleSystemExclusive(byte *array, byte size){
+void HandleSystemExclusive(byte *array, unsigned int size){
 
   if(array[1]==BASTL_BYTE){ 
    if(array[2]==TEST_BYTE) test=true, MIDI.turnThruOff(), MIDI.sendSysEx(NUMBER_OF_MESSAGE_BYTES,array,false);
@@ -145,7 +145,7 @@ void initMidi(unsigned char _channel){
   MIDI.setHandleContinue(HandleContinue);
   MIDI.setHandleStop(HandleStop);
 
-  MIDI.turnThruOn(Full);
+  MIDI.turnThruOn(midi::Full);
   // MIDI.turnThruOff(); 
 }
 
