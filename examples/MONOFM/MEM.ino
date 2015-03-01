@@ -1,6 +1,6 @@
 
 
-PROGMEM prog_uchar clearTo[]={
+PROGMEM const uint8_t clearTo[]={
   0,255,0,0, 0,0,1,0, 0,0,1,0, 0,0,1,0, 1,0,0,0, };
 
 // variable names
@@ -47,7 +47,7 @@ PROGMEM prog_uchar clearTo[]={
 
 // page RGB
 
-PROGMEM prog_uint16_t maxValue[]={
+PROGMEM const uint16_t maxValue[]={
   127,255,7,3,255 ,255,15,3,255, 255,15,3,255, 255,15,3,255, 255,255,7}; //const
 
 //  10+8+3+2+7+8+4+2+7+8+4+2+7+8+4+2+8+8+8+2 = 115

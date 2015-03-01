@@ -26,14 +26,21 @@ void envelope::update(){
 	if(_active){
 		switch(phase){
 			case ATTACK_PHASE:
-			
-				counter++;
+				if(attack>127){
+					if(flop) counter++, flop=!flop;
+					else flop=!flop;
+				}
+				else counter++;
 				value=counter*attackStep;
 				if(value>=MAX_VALUE) phase=DECAY_PHASE, counter=0, value=MAX_VALUE;
 			
 			break;
 			case DECAY_PHASE:
-				counter++;
+				if(decay>127){
+					if(flop) counter++, flop=!flop;
+					else flop=!flop;
+				}
+				else counter++;
 				value=MAX_VALUE-counter*decayStep;
 				if(value<=activeSustain) phase=SUSTAIN_PHASE, counter=0, value=activeSustain;
 			
@@ -44,7 +51,11 @@ void envelope::update(){
 			break;
 			
 			case RELEASE_PHASE:
-				counter++;
+				if(release>127){
+					if(flop) counter++, flop=!flop;
+					else flop=!flop;
+				}
+				else counter++;
 				value=releaseFrom-counter*releaseStep;
 				if(value<=MIN_VALUE) phase=END_PHASE, counter=0, _active=false, value=0;
 			break;
@@ -55,7 +66,7 @@ void envelope::update(){
 		}
 	}
 }
-void envelope::setADSR(unsigned char _ATTACK,unsigned char _DECAY,unsigned char _SUSTAIN, unsigned char _RELEASE){
+void envelope::setADSR(unsigned int _ATTACK,unsigned int _DECAY,unsigned char _SUSTAIN, unsigned int _RELEASE){
 	attack=_ATTACK;
 	decay=_DECAY;
 	sustain=_SUSTAIN;
@@ -65,21 +76,26 @@ void envelope::setADSR(unsigned char _ATTACK,unsigned char _DECAY,unsigned char 
 	decayStep=(255-sustain)/decay;
 	releaseStep=sustain/release;
 }
-void envelope::setAttack(unsigned char _ATTACK){
+void envelope::setAttack(unsigned int _ATTACK){
+	
 	attack=_ATTACK;
-	attackStep=255/attack;
+	if(attack>127)  attackStep=255/(attack-128);
+	else attackStep=255/attack;
 }
-void envelope::setDecay(unsigned char _DECAY){
+void envelope::setDecay(unsigned int _DECAY){
 	decay=_DECAY;
-	decayStep=(255-sustain)/decay;
+	if(decay>127)  decayStep=(255-sustain)/(decay-128);
+	else decayStep=(255-sustain)/decay;
+	
 }
 void envelope::setSustain(unsigned char _SUSTAIN){
 	sustain=_SUSTAIN;
 	if(phase==SUSTAIN_PHASE) activeSustain=(sustain*velocity)>>7;
 }
-void envelope::setRelease(unsigned char _RELEASE){
+void envelope::setRelease(unsigned int _RELEASE){
 	release=_RELEASE;
-	releaseStep=sustain/release;
+	if(release>127)  releaseStep=sustain/(release-128);
+	else releaseStep=sustain/release;
 }
     
 void envelope::noteOn(){

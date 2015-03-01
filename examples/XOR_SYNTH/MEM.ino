@@ -1,5 +1,5 @@
 
-PROGMEM prog_uchar clearTo[]={
+PROGMEM const uint8_t clearTo[]={
   0,0,0,0, 64,0,31,0, 0,127,0,0};
 /*
 
@@ -53,7 +53,7 @@ atck,sus, rel B - decay
 #define KNOB_BITS 10
 
 
-PROGMEM prog_uint16_t maxValue[]={
+PROGMEM const uint16_t maxValue[]={
   127,127,15,15,  127,127,31,7, 127,127,127,7}; //const
   
 
@@ -68,7 +68,7 @@ PROGMEM prog_uint16_t maxValue[]={
 
 
 //?
-#define ADSR_BITS 7
+#define ADSR_BITS 8
 #define SUSTAIN_BITS 8
 
 #define CHANNEL_BYTE 1023

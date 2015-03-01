@@ -1,6 +1,6 @@
 
 
-PROGMEM prog_uchar clearTo[]={
+PROGMEM const uint8_t clearTo[]={
   100,100,100,0, 0,0,0,0};
 /*
 
@@ -58,7 +58,7 @@ PROGMEM prog_uchar clearTo[]={
 #define KNOB_BITS 10
 
 
-PROGMEM prog_uint16_t maxValue[]={
+PROGMEM const uint16_t maxValue[]={
   127,255,255, 255,63,127, 63,63,63, 31,31,255}; //const
 
 

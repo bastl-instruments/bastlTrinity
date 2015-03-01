@@ -83,7 +83,7 @@ void setAllValues(unsigned char _SOUND){
   }
   else seq.setClockDivider(dividers[8-(getVar(_SOUND,ARP_RATE)>>4)]);
 
-  LFO.setAll(getVar(_SOUND,LFO_RATE)<<3,getVar(_SOUND,LFO_SHAPE),getVar(_SOUND,LFO_RES)); //
+  LFO.setAll(getVar(_SOUND,LFO_RATE)<<1,getVar(_SOUND,LFO_SHAPE),getVar(_SOUND,LFO_RES)); //
   lfoAmt=getVar(_SOUND,LFO_AMT)<<1;
   //LFO.reset();
 
@@ -181,7 +181,7 @@ void renderTweaking(unsigned char _SOUND, unsigned char _page){
     break;
 
   case LFO_PAGE:
-    LFO.setAll(getVar(_SOUND,LFO_RATE)<<3,getVar(_SOUND,LFO_SHAPE),getVar(_SOUND,LFO_RES));
+    LFO.setAll(getVar(_SOUND,LFO_RATE)<<1,getVar(_SOUND,LFO_SHAPE),getVar(_SOUND,LFO_RES));
     if(!hw.knobFreezed(LEFT_KNOB) && hw.knobMoved(LEFT_KNOB)) lfoAmt=getVar(_SOUND,LFO_AMT)<<1;
     break;
 

@@ -14,8 +14,8 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 boolean test;
 unsigned char inputChannel;
 
-#include <drumkit_TR.h>
-// #include <drumkit_CL.h>
+//#include <drumkit_TR.h>
+ #include <drumkit_CL.h>
 // #include <drumkit_GB.h>
 // #include <drumkit_GL.h>
 

@@ -35,11 +35,11 @@ class envelope
 	
 	void update();
 
-    void setADSR(unsigned char _ATTACK,unsigned char _DECAY,unsigned char _SUSTAIN, unsigned char _RELEASE);
-    void setAttack(unsigned char _ATTACK);
-    void setDecay(unsigned char _DECAY);
+    void setADSR(unsigned int _ATTACK,unsigned int _DECAY,unsigned char _SUSTAIN, unsigned int _RELEASE);
+    void setAttack(unsigned int _ATTACK);
+    void setDecay(unsigned int _DECAY);
     void setSustain(unsigned char _SUSTAIN);
-    void setRelease(unsigned char _RELEASE);
+    void setRelease(unsigned int _RELEASE);
     
     void noteOn(unsigned char _VELOCITY);
     void noteOn();
@@ -54,14 +54,14 @@ class envelope
 	
 	unsigned char phase;
 	
-	int counter;
+	unsigned int counter;
 	int value;
 	unsigned char MAX_VALUE;
-	unsigned char attack;
-	unsigned char decay;
+	unsigned int attack;
+	unsigned int decay;
 	unsigned char sustain;
 	unsigned char activeSustain;
-	unsigned char release;
+	unsigned int release;
 	unsigned char velocity;
 	
 	unsigned char attackStep;
@@ -69,6 +69,7 @@ class envelope
 	unsigned char sustainStep;
 	unsigned char releaseStep;
 	unsigned char releaseFrom;
+	bool flop;
 	
 	boolean _active;
 	

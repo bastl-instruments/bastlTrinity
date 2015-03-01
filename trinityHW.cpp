@@ -20,7 +20,7 @@ for Standuino wwww.standuino.eu
 
 
 
-prog_uchar buttonPins[NUMBER_OF_BUTTONS] PROGMEM = { 
+const uint8_t buttonPins[NUMBER_OF_BUTTONS] PROGMEM = { 
 							BIG_BUTTON_1_PIN,
 							BIG_BUTTON_2_PIN,
 							BIG_BUTTON_3_PIN,
@@ -33,7 +33,7 @@ prog_uchar buttonPins[NUMBER_OF_BUTTONS] PROGMEM = {
 };
 
 
-prog_uchar ledPins[NUMBER_OF_LEDS] PROGMEM = { 
+const uint8_t ledPins[NUMBER_OF_LEDS] PROGMEM = { 
 							LED_1_PIN,
 							LED_2_PIN,
 							LED_3_PIN,
@@ -43,13 +43,13 @@ prog_uchar ledPins[NUMBER_OF_LEDS] PROGMEM = {
 							
 };
 
-prog_uchar knobPins[NUMBER_OF_KNOBS] PROGMEM = {  KNOB_1_PIN, 
+const uint8_t knobPins[NUMBER_OF_KNOBS] PROGMEM = {  KNOB_1_PIN, 
                                                   KNOB_2_PIN, 
                                                   KNOB_3_PIN, 
 };
 
 
-prog_uchar colorBits[NUMBER_OF_COLORS] PROGMEM = {  
+const uint8_t colorBits[NUMBER_OF_COLORS] PROGMEM = {  
 
 BLACK_BITS, RED_BITS,GREEN_BITS,BLUE_BITS,YELLOW_BITS,MAGENTA_BITS,CIAN_BITS,WHITE_BITS
 
