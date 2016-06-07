@@ -146,6 +146,7 @@ void sequencer::tapIn(long _time){
 		numberOfTaps++;
 		tempo=( 60000*(1000/timeBase) ) / (quarterNoteTime/numberOfTaps) ; 
 		tapTime=_time;
+		fixedClockLength=calculateClockLenght();
 	}
 	
 }
